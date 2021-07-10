@@ -9,7 +9,7 @@
     </div>
     <div class="campo">
         <label for="nombre">Teléfono:</label>
-        <input type="tel" placeholder="Nombre Contacto" id="nombre">
+        <input type="tel" placeholder="Teléfono Contacto" id="telefono">
     </div>   
 </div>
 <div class="campo enviar">
