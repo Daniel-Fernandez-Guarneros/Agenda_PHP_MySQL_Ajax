@@ -137,7 +137,18 @@ function eliminarContacto(e) {
                 if (this.status === 200) {
                     const resultado = JSON.parse(xhr.responseText);
 
-                    console.log(resultado);
+                    if(resultado.respuesta == 'correcto') {
+                        
+                        console.log(e.target.parentElement.parentElement.parentElement);
+                        e.target.parentElement.parentElement.parentElement.remove();
+
+                        // mostrar Notificación
+                        mostrarNotificacion('Contacto eliminado', 'correcto');
+                    } else {
+                        // Mostramos una notificacion
+                        mostrarNotificacion('Hubo un error...', 'error' );
+                    }
+                    
                 }
             }
 
