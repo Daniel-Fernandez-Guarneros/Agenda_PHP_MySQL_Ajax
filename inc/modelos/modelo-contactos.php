@@ -1,6 +1,6 @@
 <?php
-
-if($_POST['accion'] == 'crear'){
+$accion = (isset($_REQUEST['accion'])) ? $_REQUEST['accion'] : '';
+if($accion == 'crear'){
 
     
     require_once('../funciones/bd.php');
@@ -36,7 +36,7 @@ if($_POST['accion'] == 'crear'){
     echo json_encode($respuesta);
 }
 
-if($_GET['accion'] == 'borrar') {
+if($accion == 'borrar') {
     require_once('../funciones/bd.php');
 
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
@@ -60,7 +60,7 @@ if($_GET['accion'] == 'borrar') {
     echo json_encode($respuesta);
 }
 
-if($_POST['accion'] == 'editar') {
+if($accion == 'editar') {
     // echo json_encode($_POST);
 
     require_once('../funciones/bd.php');
